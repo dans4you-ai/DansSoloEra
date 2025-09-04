@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prank Message</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+        
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Roboto Mono', monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .skull {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        h1 {
+            color: #ff3b30;
+            font-size: 28px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .pay-button {
+            background-color: #ff3b30;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            font-family: 'Roboto Mono', monospace;
+        }
+        
+        .pay-button:hover {
+            background-color: #ff6b66;
+        }
+        
+        .prank-message {
+            color: #4cd964;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 25px;
+            display: none;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="skull">💀</div>
+        <h1>YOUR FILES ARE ENCRYPTED</h1>
+        <p>Your photos, documents and</p>
+        <p>other important files have been</p>
+        <p>encrypted with unique key,</p>
+        <p>generated for this phone</p>
+        
+        <button class="pay-button" onclick="showPrank()">Pay to unlock</button>
+        
+        <div id="prankMessage" class="prank-message">
+            Selamat anda Kena Prank
+        </div>
+    </div>
+    
+    <div class="footer">
+        © Dans4you
+    </div>
+
+    <script>
+        function showPrank() {
+            document.getElementById('prankMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
