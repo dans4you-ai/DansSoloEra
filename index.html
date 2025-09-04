@@ -87,6 +87,13 @@
             color: #888;
             font-size: 14px;
         }
+        
+        .sound-control {
+            margin-top: 15px;
+            color: #666;
+            font-size: 14px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -103,15 +110,42 @@
         <div id="prankMessage" class="prank-message">
             Selamat anda Kena Prank
         </div>
+        
+        <div class="sound-control" onclick="toggleSound()">
+            🔊 Sound: ON
+        </div>
     </div>
     
     <div class="footer">
         © Dans4you
     </div>
 
+    <!-- Audio elements -->
+    <audio id="clickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"></audio>
+    <audio id="prankSound" src="https://assets.mixkit.co/sfx/preview/mixkit-funny-cartoon-jump-465.mp3"></audio>
+
     <script>
+        let soundEnabled = true;
+        
         function showPrank() {
+            // Play click sound
+            if (soundEnabled) {
+                document.getElementById('clickSound').play();
+                
+                // Play prank sound after a short delay
+                setTimeout(function() {
+                    document.getElementById('prankSound').play();
+                }, 300);
+            }
+            
+            // Show prank message
             document.getElementById('prankMessage').style.display = 'block';
+        }
+        
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            document.querySelector('.sound-control').textContent = 
+                soundEnabled ? '🔊 Sound: ON' : '🔇 Sound: OFF';
         }
     </script>
 </body>
